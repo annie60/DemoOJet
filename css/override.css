@@ -1,0 +1,43 @@
+/*
+ Add specific CSS rules    
+*/
+.container {
+ 
+  width: 280px;
+  height: 100px;
+  position: relative;
+}
+.cardface {
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  
+  background-color: none;
+}
+
+.backside {
+  transform: rotateY(180deg);
+}
+
+.info{
+    background-color: white;
+    width: 280px;
+  height: 100px;
+   
+}
+
+.list-vertical li{
+
+            display: block;
+            float: left;
+            height: 100px;
+            list-style-type: none;
+            margin: 10px;
+            vertical-align: middle;
+        
+}
+
