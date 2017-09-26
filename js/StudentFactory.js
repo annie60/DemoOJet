@@ -1,7 +1,8 @@
 define(['ojs/ojcore', 'ojs/ojmodel', 'ojs/ojcollectiontabledatasource'], function (oj) {
 
     var StudentFactory = {
-
+        
+        //TODO: Change to the working URL of your REST
         resourceUrl: "https://apex.oracle.com/pls/apex/semanai_test/semanai/students",
         
         //Create a single student instance
@@ -12,6 +13,7 @@ define(['ojs/ojcore', 'ojs/ojmodel', 'ojs/ojcollectiontabledatasource'], functio
                 idAttribute: "id",
                 parse: function(response){
                     return {
+                        //TODO: This needs to be update according the attribute you have in your REST
                         id: response['id'],
                         name: response['name'],
                         career: response['career'],
@@ -29,7 +31,9 @@ define(['ojs/ojcore', 'ojs/ojmodel', 'ojs/ojcollectiontabledatasource'], functio
                 url: self.resourceUrl,
                 model: self.createStudentModel(),
                 comparator: "id",
-                parse: function(response){ //This is assuming the JSON response is on standard pagination reference
+                parse: function(response){ 
+                    //This is assuming the JSON response is on standard pagination reference,meaning 
+                    //it only needs the portion of the 'items' in the response
                     return response.items;
                 }
             });

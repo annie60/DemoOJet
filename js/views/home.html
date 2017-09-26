@@ -27,8 +27,11 @@
 <script type="text/html" id="student_template">
 <li data-bind="click: function(){$parent.optionClick($data.id)}" class="container oj-flex-item-direction-column oj-margin" >
     <div data-bind="attr: {id: 'animatable'+$data.id}" class="demo-griditem-content">
+        <!-- TODO: map all the attributes on your REST API in
+        the fields that have a $data.__ and adjust the override.css as needed-->
                 <!-- front face of card -->
                 <div  class="cardface  info">
+                    
                         <span class="avatar" >
                             <img style="height:50px;" src="https://image.flaticon.com/icons/png/512/78/78373.png"/>
                         </span>
@@ -39,11 +42,11 @@
                     <span class="oj-text-xs oj-text-secondary-color"> Student</span>
                     </div>
                 </div>
-               
                 <!-- back face of card -->
                 <div data-bind="$parent.optionClick($data.id)" class="cardface backside oj-animation-backface">
                     <b>Career</b><p data-bind="text: $data.career"></p>
                     <b>Age</b><p data-bind="text: $data.age"></p>
+                    
                 </div>
 
     </div>

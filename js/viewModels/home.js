@@ -17,6 +17,7 @@ define(['ojs/ojcore', 'knockout','jquery', 'StudentFactory', 'ojs/ojmodule', 'oj
                         new oj.CollectionTableDataSource(self.studentCollection())));
         
         //helpers for sorting functionality
+        //TODO: Add more sorting criteria
         var criteriaMap = {};
         criteriaMap['back'] = {key: 'name', direction: 'descending'};
         criteriaMap['default'] = {key: 'name', direction: 'ascending'};

@@ -30,9 +30,11 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojtagcloud','ojs/ojpictochart'
         });
         var colors =["#267db3", "#ed6647", "#8561c8","#260dd0"];
          var handler = new oj.ColorAttributeGroupHandler({"0": "#267db3", "1": "#ed6647", "2": "#8561c8"});
+        //TODO: Change to the working URL of your REST
         $.getJSON("https://apex.oracle.com/pls/apex/semanai_test/semanai/age",
                 function (data) {
                     for (var i = 0; i < data.items.length; i++) {
+                        //TODO: Finish getting all the attributes your REST is exposing
                         self.students().push({
                             id: data.items[i]['age'],
                             label: data.items[i]['age'],
@@ -40,15 +42,18 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojtagcloud','ojs/ojpictochart'
                             style: "color: "+handler.getValue(Math.round(Math.random()*3)),
                             shortDesc: "Total students: "+data.items[i]['total']+" of age:" + data.items[i]['age']
                         });
+                        //CHALLENGE: Create a new REST with the groups of careers
+                        
                         self.pictoChartItems().push({
                             name : "Total with age: "+data.items[i]['age'],
                             shape: 'human',
                             count: data.items[i]['total'],
-                            color: colors[i]
+                            color: colors[i] //This is not going to work for more than 5 groups
+                            //TODO: Make it get colors dinamically, not restricted to 5 groups
                         });
                     }
                 }).then(
-                function () {
+                function () { //Since it returns a promise we need to listen when it is done
 
                     self.isDone(true);
                     
