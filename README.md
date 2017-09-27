@@ -1,4 +1,4 @@
-#DemoOJet Semana I 2017
+# DemoOJet Semana I 2017
 
 ### This demo is a basic template to start a web application that consumes multiple REST APIs. 
 ### It will have the key features of Oracle Jet such as a Single Page application, responsive design
