@@ -3,7 +3,7 @@ define(['ojs/ojcore', 'ojs/ojmodel', 'ojs/ojcollectiontabledatasource'], functio
     var StudentFactory = {
         
         //TODO: Change to the working URL of your REST
-        resourceUrl: "https://apex.oracle.com/pls/apex/semanai_test/semanai/students",
+        resourceUrl: "https://apex.oracle.com/pls/apex/semanai_admin/semanai/alumnos/",
         
         //Create a single student instance
         createStudentModel: function () {
@@ -14,10 +14,10 @@ define(['ojs/ojcore', 'ojs/ojmodel', 'ojs/ojcollectiontabledatasource'], functio
                 parse: function(response){
                     return {
                         //TODO: This needs to be update according the attribute you have in your REST
-                        id: response['id'],
-                        name: response['name'],
-                        career: response['career'],
-                        age : response['age'],
+                        id: response['matricula'],
+                        name: response['nombre'],
+                        career: response['carrera'],
+                        semester : response['semestre'],
                         email : response['email']
                     };
                 } 

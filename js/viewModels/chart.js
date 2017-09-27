@@ -31,21 +31,21 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojtagcloud','ojs/ojpictochart'
         var colors =["#267db3", "#ed6647", "#8561c8","#260dd0"];
          var handler = new oj.ColorAttributeGroupHandler({"0": "#267db3", "1": "#ed6647", "2": "#8561c8"});
         //TODO: Change to the working URL of your REST
-        $.getJSON("https://apex.oracle.com/pls/apex/semanai_test/semanai/age",
+        $.getJSON("https://apex.oracle.com/pls/apex/semanai_admin/semanai/semestres/",
                 function (data) {
                     for (var i = 0; i < data.items.length; i++) {
                         //TODO: Finish getting all the attributes your REST is exposing
                         self.students().push({
-                            id: data.items[i]['age'],
-                            label: data.items[i]['age'],
+                            id: data.items[i]['semestre'],
+                            label: data.items[i]['semestre'],
                             value: data.items[i]['total'],
                             style: "color: "+handler.getValue(Math.round(Math.random()*3)),
-                            shortDesc: "Total students: "+data.items[i]['total']+" of age:" + data.items[i]['age']
+                            shortDesc: "Total students: "+data.items[i]['total']+" of semester:" + data.items[i]['semester']
                         });
                         //CHALLENGE: Create a new REST with the groups of careers
                         
                         self.pictoChartItems().push({
-                            name : "Total with age: "+data.items[i]['age'],
+                            name : "Total with semester: "+data.items[i]['semester'],
                             shape: 'human',
                             count: data.items[i]['total'],
                             color: colors[i] //This is not going to work for more than 5 groups
