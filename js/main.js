@@ -27,7 +27,7 @@ requirejs.config(
                                 'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.0.min',
                                 'css': 'libs/require-css/css.min',
                                 'customElements': 'libs/webcomponents/CustomElements.min',
-                                'proj4': 'libs/proj4js/dist/proj4',
+                                'proj4': 'libs/proj4js/dist/proj4'
                                 
                             }
                     //endinjector

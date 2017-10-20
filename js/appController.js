@@ -24,7 +24,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'ojs/ojrouter', 'ojs/ojknock
                 self.router = oj.Router.rootInstance;
                 self.router.configure({
                     'home': {label: 'Home', isDefault: true},
-                    'chart': {label: 'Chart'}
+                    'chart': {label: 'Chart'},
+                    'testchart':{label: 'Semana i'}
                     
                 });
                 oj.Router.defaults['urlAdapter'] = new oj.Router.urlParamAdapter();
@@ -34,6 +35,8 @@ define(['ojs/ojcore', 'knockout', 'ojs/ojknockout', 'ojs/ojrouter', 'ojs/ojknock
                     {name: 'Home', id: 'home',
                         iconClass: 'oj-navigationlist-item-icon'},
                     {name: 'Chart', id: 'chart',
+                        iconClass: 'oj-navigationlist-item-icon '},
+                    {name: 'Semana i', id: 'testchart',
                         iconClass: 'oj-navigationlist-item-icon '}
                 ];
                 self.navDataSource = new oj.ArrayTableDataSource(navData, {idAttribute: 'id'});
